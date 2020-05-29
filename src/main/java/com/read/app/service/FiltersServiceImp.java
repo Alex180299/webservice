@@ -1,5 +1,6 @@
 package com.read.app.service;
 
+import com.read.app.App;
 import com.read.app.model.Filter;
 import org.springframework.stereotype.Service;
 
@@ -7,23 +8,27 @@ import java.util.List;
 
 @Service
 public class FiltersServiceImp implements FiltersService {
+
+    private App app = App.getInstance();
+
     @Override
     public List<Filter> findAll() {
-        return null;
+        return app.getFiltersLayout().getFilter();
     }
 
     @Override
     public Filter findById(Long id) {
-        return null;
+        return app.getFiltersLayout().getFilter().stream().filter(filter -> filter.getId().equals(id)).findFirst().orElse(null);
     }
 
     @Override
     public Filter save(Filter filter) {
-        return null;
+        app.getFiltersLayout().getFilter().add(filter);
+        return filter;
     }
 
     @Override
-    public Filter delete(Filter filter) {
-        return null;
+    public void delete(Filter filter) {
+        app.getFiltersLayout().getFilter().remove(filter);
     }
 }

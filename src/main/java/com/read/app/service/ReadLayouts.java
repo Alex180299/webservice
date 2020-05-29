@@ -1,8 +1,8 @@
 package com.read.app.service;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.read.app.model.FieldsLayout;
 import com.read.app.model.FiltersLayout;
+import com.read.app.model.Layout;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +14,8 @@ public class ReadLayouts {
 
     private static final XmlMapper xmlMapper = new XmlMapper();
 
-    public FieldsLayout readFields(){
-        return mapLayout("./config/fields.xml", FieldsLayout.class);
+    public Layout readLayout(){
+        return mapLayout("./config/layout.xml", Layout.class);
     }
 
     public FiltersLayout readFilters(){
