@@ -27,7 +27,7 @@ public class ReadLayoutSchedule implements Job {
             Trigger trigger = TriggerBuilder.newTrigger()
                     .withIdentity("Trigger XML process")
                     .withSchedule(simpleSchedule()
-                            .withIntervalInHourxs(24)
+                            .withIntervalInHours(24)
                             .repeatForever())
                     .startAt(runtime)
                     .build();
