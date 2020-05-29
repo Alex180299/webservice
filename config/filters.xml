@@ -1,0 +1,4 @@
+<filters>
+    <filter id="1" layout="layout-in" name="Filtro comun" sequence="1" fieldId="2" operator="<" value="5" parenthesis="(" negated="false" connector="OR"/>
+    <filter id="2" layout="layout-in" name="Filtro comun 2" sequence="2" fieldId="2" operator=">" value="3" parenthesis=")" negated="false" connector=""/>
+</filters>
