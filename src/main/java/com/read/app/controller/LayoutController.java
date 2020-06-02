@@ -23,26 +23,44 @@ public class LayoutController {
         return layoutServiceImp.findLayoutOutFields();
     }
 
-    @PostMapping("/in/field")
-    public Field saveInField(@RequestParam Field field){
-        return layoutServiceImp.save(field);
-    }
-
     @GetMapping("/in/field/{id}")
     public Field getInFieldById(@PathVariable Long id){
         return layoutServiceImp.findInFieldById(id);
     }
 
-    @DeleteMapping("/in/field")
-    public String deleteInField(@RequestParam Field field){
-        layoutServiceImp.delete(field);
-        return "{ success: Eliminado correctamente }";
+    @GetMapping("/in/field/{id}")
+    public Field getOutFieldById(@PathVariable Long id){
+        return layoutServiceImp.findOutFieldById(id);
+    }
+
+    @PostMapping("/in/field")
+    public String saveInField(@RequestParam Field field){
+        return "{ " + layoutServiceImp.saveInField(field)+" }";
+    }
+
+    @PostMapping("/out/field")
+    public String saveOutField(@RequestParam Field field){
+        return "{ " + layoutServiceImp.saveOutField(field)+" }";
+    }
+
+    @DeleteMapping("/in/field/{id}")
+    public String deleteInField(@PathVariable Long id){
+        return "{ " + layoutServiceImp.deleteInField(id) + " }";
+    }
+
+    @DeleteMapping("/out/field/{id}")
+    public String deleteOutField(@PathVariable Long id){
+        return "{ " + layoutServiceImp.deleteOutField(id) + " }";
     }
 
     @PutMapping("/in/field")
-    public Field updateInField(@RequestParam Field field){
-        return layoutServiceImp.save(field);
+    public String updateInField(@RequestParam Field field){
+        return "{ " + layoutServiceImp.updateInField(field) + " }";
     }
 
+    @PutMapping("/out/field")
+    public String updateOutField(@RequestParam Field field){
+        return "{ " + layoutServiceImp.updateOutField(field) + " }";
+    }
 
 }

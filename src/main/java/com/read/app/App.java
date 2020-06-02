@@ -1,11 +1,19 @@
 package com.read.app;
 
+import com.read.app.model.Configuration;
 import com.read.app.model.FiltersLayout;
 import com.read.app.model.Layout;
 import com.read.app.schedule.ReadLayoutSchedule;
 import com.read.app.service.ReadLayouts;
+import lombok.extern.log4j.Log4j2;
+import org.quartz.ScheduleBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.concurrent.TimeUnit;
+
+import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
+
+@Log4j2
 public class App {
 
     private App(){}
@@ -16,7 +24,7 @@ public class App {
         return INSTANCE;
     }
 
-    ReadLayouts readLayouts = new ReadLayouts();
+    private static ReadLayouts readLayouts = new ReadLayouts();
     private Layout layout;
     private FiltersLayout filtersLayout;
 
@@ -28,8 +36,21 @@ public class App {
     }
 
     public static void init(){
+        Configuration configuration = null;
+        try {
+             configuration = readLayouts.readConfig();
+        }catch (Exception e){
+            log.error("Error al extraer la configuración: " + e.getMessage());
+        }
+
+        System.out.println(configuration.getReload().getUnit());
         ReadLayoutSchedule readLayoutSchedule = new ReadLayoutSchedule();
-        readLayoutSchedule.start();
+        ScheduleBuilder scheduleBuilder = null;
+
+        long timeUnit = configuration.getReload().getUnit().toMillis(configuration.getReload().getQuantity());
+        scheduleBuilder = simpleSchedule().withIntervalInMilliseconds(timeUnit).repeatForever();
+
+        readLayoutSchedule.start(scheduleBuilder);
     }
 
     public Layout getLayout() {

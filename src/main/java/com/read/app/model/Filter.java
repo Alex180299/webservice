@@ -20,7 +20,7 @@ public class Filter {
 
     private Long fieldId;
 
-    private Operators operator;
+    private String operator;
 
     private String value;
 
@@ -29,8 +29,4 @@ public class Filter {
     private boolean negated;
 
     private String connector;
-
-    public void setOperator(String value){
-        this.operator = Operators.forValue(value);
-    }
 }

@@ -8,6 +8,7 @@ public interface FiltersService {
 
     public List<Filter> findAll();
     public Filter findById(Long id);
-    public Filter save(Filter filter);
-    public void delete(Filter filter);
+    public String save(Filter filter);
+    public String update(Filter filter);
+    public String delete(Long id);
 }

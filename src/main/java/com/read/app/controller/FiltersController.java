@@ -19,8 +19,8 @@ public class FiltersController {
     }
 
     @PostMapping("/filter")
-    public Filter saveFilter(@RequestParam Filter filter){
-        return filtersService.save(filter);
+    public String saveFilter(@RequestParam Filter filter){
+        return "{ " + filtersService.save(filter) + " }";
     }
 
     @GetMapping("/filter/{id}")
@@ -28,15 +28,14 @@ public class FiltersController {
         return filtersService.findById(id);
     }
 
-    @DeleteMapping("/filter")
-    public String deleteFilter(@RequestParam Filter filter){
-        filtersService.delete(filter);
-        return "{ success: Eliminado correctamente }";
+    @DeleteMapping("/filter/{id}")
+    public String deleteFilter(@PathVariable Long id){
+        return "{ + " + filtersService.delete(id) + " }";
     }
 
     @PutMapping("/filter")
-    public Filter updateFilter(@RequestParam Filter filter){
-        return filtersService.save(filter);
+    public String updateFilter(@RequestParam Filter filter){
+        return "{ + " + filtersService.update(filter) + " }";
     }
 
 }

@@ -4,21 +4,22 @@ import com.read.app.App;
 import lombok.extern.log4j.Log4j2;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+import org.springframework.util.StringUtils;
 
+import java.util.*;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.stream.Collectors;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 @Log4j2
 public class ReadLayoutSchedule implements Job {
 
-    public void start(){
+    public void start(ScheduleBuilder scheduleBuilder){
         try {
             Scheduler scheduler = new StdSchedulerFactory().getScheduler();
             scheduler.clear();
-            Date runtime = DateBuilder.evenMinuteDateAfterNow();
+            Date runtime = DateBuilder.evenSecondDateAfterNow();
 
             JobDetail job = JobBuilder.newJob(ReadLayoutSchedule.class)
                     .withIdentity("readXmlProcess")
@@ -26,9 +27,7 @@ public class ReadLayoutSchedule implements Job {
 
             Trigger trigger = TriggerBuilder.newTrigger()
                     .withIdentity("Trigger XML process")
-                    .withSchedule(simpleSchedule()
-                            .withIntervalInHours(24)
-                            .repeatForever())
+                    .withSchedule(scheduleBuilder)
                     .startAt(runtime)
                     .build();
 

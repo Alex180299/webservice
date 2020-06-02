@@ -1,6 +1,7 @@
 package com.read.app.service;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.read.app.model.Configuration;
 import com.read.app.model.FiltersLayout;
 import com.read.app.model.Layout;
 import lombok.extern.log4j.Log4j2;
@@ -20,6 +21,10 @@ public class ReadLayouts {
 
     public FiltersLayout readFilters(){
         return mapLayout("./config/filters.xml", FiltersLayout.class);
+    }
+
+    public Configuration readConfig(){
+        return mapLayout("./config/configuration.xml", Configuration.class);
     }
 
     private <T>T mapLayout(String fileName, Class className){

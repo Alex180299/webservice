@@ -1,0 +1,3 @@
+<configuration>
+    <reload unit="MINUTES" quantity="1"/>
+</configuration>
