@@ -4,13 +4,7 @@ import com.read.app.App;
 import lombok.extern.log4j.Log4j2;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import org.springframework.util.StringUtils;
-
 import java.util.*;
-import java.util.Calendar;
-import java.util.stream.Collectors;
-
-import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 @Log4j2
 public class ReadLayoutSchedule implements Job {
@@ -33,6 +27,7 @@ public class ReadLayoutSchedule implements Job {
 
             scheduler.scheduleJob(job, trigger);
             scheduler.start();
+            log.info("Tarea programada de lectura de layouts iniciada");
         } catch (SchedulerException e) {
             log.error("Error al iniciar la tarea: " + e.getMessage());
         }
