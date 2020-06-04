@@ -1,18 +1,20 @@
 package com.read.app.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FiltersLayout {
+@JacksonXmlRootElement(localName = "filters")
+public class Filters {
 
     @JacksonXmlElementWrapper(useWrapping = false)
     private List<Filter> filter = new ArrayList<>();
 
-    public FiltersLayout(){}
+    public Filters(){}
 
-    public FiltersLayout(List<Filter> filter) {
+    public Filters(List<Filter> filter) {
         this.filter = filter;
     }
 

@@ -1,32 +1,39 @@
-<layout>
-    <layout-in>
-        <fields>
-            <field id="1" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="2" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="3" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="4" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="5" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="6" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="7" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="8" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="9" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="10" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="11" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-        </fields>
-    </layout-in>
-    <layout-out>
-        <fields>
-            <field id="1" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="2" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="3" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="4" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="5" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="6" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="7" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="8" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="9" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="10" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-            <field id="11" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC" />
-        </fields>
-    </layout-out>
-</layout>
+<Layout>
+  <layout-in>
+    <fields>
+      <field id="3" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="4" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="5" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="6" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="7" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="8" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="9" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="10" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="11" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="12" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="13" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="14" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="15" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="16" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="17" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="18" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="1" name="Campo cambiado" sequence="3" length="4" type="INTEGER"/>
+    </fields>
+  </layout-in>
+  <layout-out>
+    <fields>
+      <field id="1" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="2" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="3" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="4" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="5" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="6" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="7" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="8" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="9" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="10" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="11" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+      <field id="12" name="Origen_Liver" sequence="2" length="2" type="ALPHANUMERIC"/>
+    </fields>
+  </layout-out>
+</Layout>

@@ -1,10 +1,12 @@
 package com.read.app.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@JacksonXmlRootElement(localName = "layout")
 public class FieldsLayout {
 
     @JacksonXmlElementWrapper(useWrapping = false)

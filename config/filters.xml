@@ -1,4 +1,10 @@
-<filters>
-    <filter id="1" layout="layout-in" name="Filtro comun" sequence="1" fieldId="2" operator="a" value="5" parenthesis="(" negated="false" connector="OR"/>
-    <filter id="2" layout="layout-in" name="Filtro comun 2" sequence="2" fieldId="2" operator="a" value="3" parenthesis=")" negated="false" connector=""/>
-</filters>
+<Filters>
+    <filter id="1" layout="layout-in" name="Filtro comun" sequence="1" fieldId="2" operator="a" value="5"
+            parenthesis="(" negated="false" connector="OR"/>
+    <filter id="2" layout="layout-in" name="Filtro comun 2" sequence="2" fieldId="2" operator="a" value="3"
+            parenthesis=")" negated="false" connector=""/>
+    <filter id="20" layout="layout-in" name="Filtro nuevo" sequence="1" fieldId="2" operator="LESS_THAN" value="10"
+            parenthesis=")" negated="false" connector="AND"/>
+    <filter id="20" layout="layout-in" name="Filtro nuevo" sequence="1" fieldId="2" operator="LESS_THAN" value="10"
+            parenthesis=")" negated="false" connector="AND"/>
+</Filters>
