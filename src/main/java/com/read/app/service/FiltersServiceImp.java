@@ -1,7 +1,8 @@
 package com.read.app.service;
 
-import com.read.app.App;
 import com.read.app.model.Filter;
+import com.read.app.repository.FiltersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,30 +10,31 @@ import java.util.List;
 @Service
 public class FiltersServiceImp implements FiltersService {
 
-    private App app = App.getInstance();
+    @Autowired
+    FiltersRepository filtersRepository;
 
     @Override
     public List<Filter> findAll() {
-        return app.findAll();
+        return filtersRepository.findAll();
     }
 
     @Override
     public Filter findById(Long id) {
-        return app.findById(id);
+        return filtersRepository.findById(id);
     }
 
     @Override
     public String save(Filter filter) {
-        return app.save(filter);
+        return filtersRepository.save(filter);
     }
 
     @Override
     public String update(Filter filter) {
-        return app.update(filter);
+        return filtersRepository.update(filter);
     }
 
     @Override
     public String delete(Long id) {
-        return app.delete(id);
+        return filtersRepository.delete(id);
     }
 }
