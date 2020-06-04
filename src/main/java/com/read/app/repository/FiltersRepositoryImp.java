@@ -12,18 +12,17 @@ import java.util.List;
 public class FiltersRepositoryImp implements FiltersRepository
 {
     private static App app = App.getInstance();
-    private static List<Filter> filters = app.getFilters().getFilter();
 
     @Override
     public List<Filter> findAll()
     {
-        return filters;
+        return app.getFilters();
     }
 
     @Override
     public Filter findById(Long id)
     {
-        return filters.stream().filter(filter -> filter.getId().equals(id)).findFirst().orElse(null);
+        return app.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().orElse(null);
     }
 
     @Override
@@ -31,8 +30,8 @@ public class FiltersRepositoryImp implements FiltersRepository
     {
         try
         {
-            filter.setId((long) filters.size() + 1);
-            filters.add(filter);
+            filter.setId((long) app.getFilters().size() + 1);
+            app.getFilters().add(filter);
             app.updateFiltersXml();
         }
         catch (Exception e)
@@ -50,8 +49,8 @@ public class FiltersRepositoryImp implements FiltersRepository
         try{
             if (exists(filter.getId()))
             {
-                filters.remove(filters.stream().filter(filter1 -> filter1.getId().equals(filter.getId())).findFirst().get());
-                filters.add(filter);
+                app.getFilters().remove(app.getFilters().stream().filter(filter1 -> filter1.getId().equals(filter.getId())).findFirst().get());
+                app.getFilters().add(filter);
                 app.sortFilters();
                 app.updateFiltersXml();
                 return "Success: Filtro con id: " + filter.getId() + " actualizado correctamente";
@@ -71,7 +70,7 @@ public class FiltersRepositoryImp implements FiltersRepository
     {
         try{
             if(exists(id)){
-                filters.remove(filters.stream().filter(filter -> filter.getId().equals(id)).findFirst().get());
+                app.getFilters().remove(app.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().get());
                 return "Success: Filtro con id: " + id + " actualizado correctamente";
             }else{
                 return "Error: Error el registro no existe";
@@ -85,6 +84,6 @@ public class FiltersRepositoryImp implements FiltersRepository
     @Override
     public boolean exists(Long id)
     {
-        return filters.stream().anyMatch(filter -> filter.getId().equals(id));
+        return app.getFilters().stream().anyMatch(filter -> filter.getId().equals(id));
     }
 }

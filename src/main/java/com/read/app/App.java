@@ -5,7 +5,9 @@ import com.read.app.schedule.ReadLayoutSchedule;
 import com.read.app.service.ReadLayouts;
 import lombok.extern.log4j.Log4j2;
 import org.quartz.ScheduleBuilder;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
@@ -82,13 +84,18 @@ public class App
         }
     }
 
-    public Layout getLayout()
+    public List<Field> getLayoutIn()
     {
-        return layout;
+        return layout.getLayoutIn().getFields().getField();
     }
 
-    public Filters getFilters()
+    public List<Field> getLayoutOut()
     {
-        return filters;
+        return layout.getLayoutOut().getFields().getField();
+    }
+
+    public List<Filter> getFilters()
+    {
+        return filters.getFilter();
     }
 }
