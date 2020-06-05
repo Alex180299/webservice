@@ -3,6 +3,7 @@ package com.read.app.service;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.read.app.App;
+import com.read.app.configuration.ConfigurationModule;
 import com.read.app.model.Configuration;
 import com.read.app.model.Filters;
 import com.read.app.model.Layout;
@@ -19,23 +20,23 @@ public class ReadLayouts {
     }
 
     public Layout readLayout(){
-        return mapLayout("./config/layout.xml", Layout.class);
+        return mapLayout(ConfigurationModule.layoutFieldsFile, Layout.class);
     }
 
     public Filters readFilters(){
-        return mapLayout("./config/filters.xml", Filters.class);
+        return mapLayout(ConfigurationModule.layoutFiltersFile, Filters.class);
     }
 
     public Layout writeLayout(Layout layout){
-        return serializeLayout("./config/layout.xml", layout);
+        return serializeLayout(ConfigurationModule.layoutFieldsFile, layout);
     }
 
     public Filters writeFilters(Filters filtersLayout){
-        return serializeLayout("./config/filters.xml", filtersLayout);
+        return serializeLayout(ConfigurationModule.layoutFiltersFile, filtersLayout);
     }
 
     public Configuration readConfig(){
-        return mapLayout("./config/configuration.xml", Configuration.class);
+        return mapLayout(ConfigurationModule.configurationFile, Configuration.class);
     }
 
     private <T>T mapLayout(String fileName, Class className){

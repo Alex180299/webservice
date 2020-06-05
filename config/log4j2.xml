@@ -1,15 +1,19 @@
-<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
-<log4j:configuration debug="true">
-    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="./log/layouts.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
-        </layout>
-    </appender>
-
-    <root>
-        <priority value ="info"></priority>
-        <appender-ref ref="fileAppender"></appender-ref>
-    </root>
-
-</log4j:configuration>
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="5">
+    <Appenders>
+        <RollingFile name="file-day" fileName="log/layouts.log" filePattern="log/layouts-%d{yyyy-MM-dd}.log">
+            <MarkerFilter marker="XML" onMatch="DENY" onMismatch="ACCEPT"/>
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="file-day"/>
+        </Root>
+    </Loggers>
+</Configuration>
