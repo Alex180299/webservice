@@ -2,15 +2,20 @@ package com.read.app.repository;
 
 import com.read.app.App;
 import com.read.app.model.Field;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.stereotype.Component;
+import org.apache.log4j.Logger;
 import java.util.List;
 
-@Log4j2
-@Component
+
 public class LayoutRepositoryImp implements LayoutRepository
 {
-    private App app = App.getInstance();
+
+    private static Logger log;
+    private static App app;
+
+    public LayoutRepositoryImp(){
+        log = Logger.getLogger(FiltersRepositoryImp.class);
+        app = App.getInstance();
+    }
 
     @Override
     public List<Field> findLayoutInFields()

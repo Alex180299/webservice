@@ -3,15 +3,12 @@ package com.read.app.service;
 import com.read.app.model.Field;
 import com.read.app.repository.LayoutRepository;
 import com.read.app.repository.LayoutRepositoryImp;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-@Service
 public class LayoutServiceImp implements LayoutService {
 
-    @Autowired
-    LayoutRepository layoutRepository;
+    private static LayoutRepository layoutRepository = new LayoutRepositoryImp();
 
     @Override
     public List<Field> findLayoutInFields() {

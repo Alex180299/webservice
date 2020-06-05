@@ -2,18 +2,17 @@ package com.read.app.service;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.read.app.App;
 import com.read.app.model.Configuration;
 import com.read.app.model.Filters;
 import com.read.app.model.Layout;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.stereotype.Component;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 
-@Component
-@Log4j2
 public class ReadLayouts {
 
+    private static final Logger log = Logger.getLogger(App.class);
     private static final XmlMapper xmlMapper = new XmlMapper();
     static {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);

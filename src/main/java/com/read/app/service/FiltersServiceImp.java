@@ -2,16 +2,13 @@ package com.read.app.service;
 
 import com.read.app.model.Filter;
 import com.read.app.repository.FiltersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.read.app.repository.FiltersRepositoryImp;
 
 import java.util.List;
 
-@Service
 public class FiltersServiceImp implements FiltersService {
 
-    @Autowired
-    FiltersRepository filtersRepository;
+    private static FiltersRepository filtersRepository = new FiltersRepositoryImp();
 
     @Override
     public List<Filter> findAll() {

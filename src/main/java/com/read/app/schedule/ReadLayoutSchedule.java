@@ -1,13 +1,14 @@
 package com.read.app.schedule;
 
 import com.read.app.App;
-import lombok.extern.log4j.Log4j2;
+import org.apache.log4j.Logger;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import java.util.*;
 
-@Log4j2
 public class ReadLayoutSchedule implements Job {
+
+    private static final Logger log = Logger.getLogger(ReadLayoutSchedule.class);
 
     public void start(ScheduleBuilder scheduleBuilder){
         try {

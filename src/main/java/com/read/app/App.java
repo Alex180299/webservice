@@ -3,18 +3,16 @@ package com.read.app;
 import com.read.app.model.*;
 import com.read.app.schedule.ReadLayoutSchedule;
 import com.read.app.service.ReadLayouts;
-import lombok.extern.log4j.Log4j2;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.quartz.ScheduleBuilder;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
-@Log4j2
 public class App
 {
+    private static final Logger log = Logger.getLogger(App.class);
 
     private App()
     {
@@ -65,6 +63,9 @@ public class App
 
     public static void init()
     {
+        DOMConfigurator.configure("./config/log4j.xml");
+        log.info("This is Logger Info");
+
         Configuration configuration = null;
         try
         {
@@ -82,6 +83,8 @@ public class App
         {
             log.error("Error al extraer la configuración: " + e.getMessage());
         }
+
+        getInstance().start();
     }
 
     public List<Field> getLayoutIn()
