@@ -3,16 +3,38 @@ package com.read.app;
 import com.read.app.model.*;
 import com.read.app.schedule.ReadLayoutSchedule;
 import com.read.app.service.ReadLayouts;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.config.ConfigurationSource;
+import org.apache.logging.log4j.core.config.xml.XmlConfiguration;
 import org.quartz.ScheduleBuilder;
+
+import java.io.FileInputStream;
 import java.util.List;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 public class App
 {
-    private static final Logger log = Logger.getLogger(App.class);
+    private static final Logger LOG = LogManager.getLogger(App.class.getSimpleName());
+    private static Layout layout;
+    private static Filters filters;
+
+    static
+    {
+        try
+        {
+            LoggerContext context = LoggerContext.getContext(false);
+            context.start(new XmlConfiguration(context, new ConfigurationSource(new FileInputStream("./config/log4j2.xml"))));
+        }
+        catch (Exception e)
+        {
+            LOG.fatal("No se puede configurar el archivo logger debiado a : " + e.getMessage() + " la aplicacion se cerrara ");
+            System.exit(-1);
+        }
+        LOG.info("Se ha cargado el logger correctamente");
+    }
 
     private App()
     {
@@ -26,8 +48,7 @@ public class App
     }
 
     private static ReadLayouts readLayouts = new ReadLayouts();
-    private Layout layout;
-    private Filters filters;
+
 
     public void start()
     {
@@ -61,11 +82,8 @@ public class App
         readLayouts.writeFilters(filters);
     }
 
-    public static void init()
+    public static void main(String[] args)
     {
-        DOMConfigurator.configure("./config/log4j.xml");
-        log.info("This is Logger Info");
-
         Configuration configuration = null;
         try
         {
@@ -73,7 +91,7 @@ public class App
             ReadLayoutSchedule readLayoutSchedule = new ReadLayoutSchedule();
             ScheduleBuilder scheduleBuilder = null;
 
-            log.info("Configuracion cargada");
+            LOG.info("Configuracion cargada");
 
             long timeUnit = configuration.getReload().getUnit().toMillis(configuration.getReload().getQuantity());
             scheduleBuilder = simpleSchedule().withIntervalInMilliseconds(timeUnit).repeatForever();
@@ -81,7 +99,7 @@ public class App
         }
         catch (Exception e)
         {
-            log.error("Error al extraer la configuración: " + e.getMessage());
+            LOG.error("Error al extraer la configuración: " + e.getMessage());
         }
 
         getInstance().start();
