@@ -74,3 +74,21 @@
 2020-06-04 17:15:58 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
 2020-06-04 17:15:58 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
 2020-06-04 17:15:58 INFO  ReadLayoutSchedule:31 - Tarea programada de lectura de layouts iniciada
+2020-06-05 11:49:03 INFO  App:29 - Configuracion cargada
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1220 - Using default implementation for ThreadExecutor
+2020-06-05 11:49:03 INFO  SimpleThreadPool:268 - Job execution threads will use class loader of thread: main
+2020-06-05 11:49:03 INFO  SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-05 11:49:03 INFO  QuartzScheduler:229 - Quartz Scheduler v.2.3.2 created.
+2020-06-05 11:49:03 INFO  RAMJobStore:155 - RAMJobStore initialized.
+2020-06-05 11:49:03 INFO  QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1374 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
+2020-06-05 11:49:03 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-06-05 11:49:03 INFO  ReadLayoutSchedule:32 - Tarea programada de lectura de layouts iniciada

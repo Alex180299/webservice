@@ -2,69 +2,27 @@ package com.read.app;
 
 import com.read.app.model.*;
 import com.read.app.schedule.ReadLayoutSchedule;
+import com.read.app.service.LayoutsService;
 import com.read.app.service.ReadLayouts;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.quartz.ScheduleBuilder;
-import java.util.List;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 public class App
 {
     private static final Logger log = Logger.getLogger(App.class);
-
-    private App()
-    {
-    }
-
-    private static final App INSTANCE = new App();
-
-    public static App getInstance()
-    {
-        return INSTANCE;
-    }
-
     private static ReadLayouts readLayouts = new ReadLayouts();
-    private Layout layout;
-    private Filters filters;
 
-    public void start()
+    public static void main(String[] args)
     {
-        layout = readLayouts.readLayout();
-        filters = readLayouts.readFilters();
-
-        sortLayout();
-        sortFilters();
-    }
-
-    public void sortLayout()
-    {
-        layout.getLayoutIn().getFields().getField().sort((o1, o2) -> (o1.getId() < o2.getId()) ? -1 : (o1.getId() == o2.getId()) ? 0 : 1);
-        layout.getLayoutIn().getFields().getField().sort((o1, o2) -> (o1.getId() < o2.getId()) ? -1 : (o1.getId() == o2.getId()) ? 0 : 1);
-    }
-
-    public void sortFilters()
-    {
-        filters.getFilter().sort((o1, o2) -> (o1.getId() < o2.getId()) ? -1 : (o1.getId() == o2.getId()) ? 0 : 1);
-    }
-
-    public void updateLayoutXml()
-    {
-        sortLayout();
-        readLayouts.writeLayout(layout);
-    }
-
-    public void updateFiltersXml()
-    {
-        sortFilters();
-        readLayouts.writeFilters(filters);
+        init();
     }
 
     public static void init()
     {
-        DOMConfigurator.configure("./config/log4j.xml");
-        log.info("This is Logger Info");
+        DOMConfigurator.configure("./config/log4j2.xml");
 
         Configuration configuration = null;
         try
@@ -84,21 +42,6 @@ public class App
             log.error("Error al extraer la configuración: " + e.getMessage());
         }
 
-        getInstance().start();
-    }
-
-    public List<Field> getLayoutIn()
-    {
-        return layout.getLayoutIn().getFields().getField();
-    }
-
-    public List<Field> getLayoutOut()
-    {
-        return layout.getLayoutOut().getFields().getField();
-    }
-
-    public List<Filter> getFilters()
-    {
-        return filters.getFilter();
+        LayoutsService.start();
     }
 }

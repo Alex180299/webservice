@@ -1,6 +1,7 @@
 package com.read.app.schedule;
 
 import com.read.app.App;
+import com.read.app.service.LayoutsService;
 import org.apache.log4j.Logger;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -36,7 +37,6 @@ public class ReadLayoutSchedule implements Job {
 
     @Override
     public void execute(JobExecutionContext jobExecutionContext) {
-        App app = App.getInstance();
-        app.start();
+        LayoutsService.start();
     }
 }

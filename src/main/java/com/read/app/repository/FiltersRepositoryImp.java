@@ -1,7 +1,9 @@
 package com.read.app.repository;
 
-import com.read.app.App;
 import com.read.app.model.Filter;
+import com.read.app.model.Layout;
+import com.read.app.model.LayoutLists;
+import com.read.app.service.LayoutsService;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -9,23 +11,21 @@ import java.util.List;
 public class FiltersRepositoryImp implements FiltersRepository
 {
     private static Logger log;
-    private static App app;
 
     public FiltersRepositoryImp(){
         log = Logger.getLogger(FiltersRepositoryImp.class);
-        app = App.getInstance();
     }
 
     @Override
     public List<Filter> findAll()
     {
-        return app.getFilters();
+        return LayoutLists.getFilters();
     }
 
     @Override
     public Filter findById(Long id)
     {
-        return app.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().orElse(null);
+        return LayoutLists.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().orElse(null);
     }
 
     @Override
@@ -33,9 +33,9 @@ public class FiltersRepositoryImp implements FiltersRepository
     {
         try
         {
-            filter.setId((long) app.getFilters().size() + 1);
-            app.getFilters().add(filter);
-            app.updateFiltersXml();
+            filter.setId(LayoutLists.getNextFilterId());
+            LayoutLists.getFilters().add(filter);
+            LayoutsService.updateFiltersXml();
         }
         catch (Exception e)
         {
@@ -52,10 +52,10 @@ public class FiltersRepositoryImp implements FiltersRepository
         try{
             if (exists(filter.getId()))
             {
-                app.getFilters().remove(app.getFilters().stream().filter(filter1 -> filter1.getId().equals(filter.getId())).findFirst().get());
-                app.getFilters().add(filter);
-                app.sortFilters();
-                app.updateFiltersXml();
+                LayoutLists.getFilters().remove(LayoutLists.getFilters().stream().filter(filter1 -> filter1.getId().equals(filter.getId())).findFirst().get());
+                LayoutLists.getFilters().add(filter);
+                LayoutLists.sortFilters();
+                LayoutsService.updateFiltersXml();
                 return "Success: Filtro con id: " + filter.getId() + " actualizado correctamente";
             }
             else
@@ -73,7 +73,7 @@ public class FiltersRepositoryImp implements FiltersRepository
     {
         try{
             if(exists(id)){
-                app.getFilters().remove(app.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().get());
+                LayoutLists.getFilters().remove(LayoutLists.getFilters().stream().filter(filter -> filter.getId().equals(id)).findFirst().get());
                 return "Success: Filtro con id: " + id + " actualizado correctamente";
             }else{
                 return "Error: Error el registro no existe";
@@ -87,6 +87,6 @@ public class FiltersRepositoryImp implements FiltersRepository
     @Override
     public boolean exists(Long id)
     {
-        return app.getFilters().stream().anyMatch(filter -> filter.getId().equals(id));
+        return LayoutLists.getFilters().stream().anyMatch(filter -> filter.getId().equals(id));
     }
 }
