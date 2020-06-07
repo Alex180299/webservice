@@ -1,15 +1,17 @@
 package com.read.app.schedule;
 
 import com.read.app.App;
+import com.read.app.repository.FiltersRepositoryImp;
 import com.read.app.service.LayoutsService;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import java.util.*;
 
 public class ReadLayoutSchedule implements Job {
 
-    private static final Logger log = Logger.getLogger(ReadLayoutSchedule.class);
+    private static final Logger log = LogManager.getLogger(FiltersRepositoryImp.class);
 
     public void start(ScheduleBuilder scheduleBuilder){
         try {

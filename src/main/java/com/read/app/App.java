@@ -1,29 +1,38 @@
 package com.read.app;
 
+import com.read.app.configuration.ConfigurationModule;
 import com.read.app.model.*;
 import com.read.app.schedule.ReadLayoutSchedule;
 import com.read.app.service.LayoutsService;
 import com.read.app.service.ReadLayouts;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.config.ConfigurationSource;
+import org.apache.logging.log4j.core.config.xml.XmlConfiguration;
 import org.quartz.ScheduleBuilder;
+
+import java.io.FileInputStream;
 
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 public class App
 {
-    private static final Logger log = Logger.getLogger(App.class);
+    private static final Logger log = LogManager.getLogger(App.class.getSimpleName());
+
     private static ReadLayouts readLayouts = new ReadLayouts();
 
     public static void main(String[] args)
     {
+        ConfigurationModule.configurationFile = "./config/configuration.xml";
+        //ConfigurationModule.loggingFile = "./config/log4j.xml";
+        ConfigurationModule.layoutFieldsFile = "./config/layout.xml";
+        ConfigurationModule.layoutFiltersFile = "./config/filters.xml";
         init();
     }
 
     public static void init()
     {
-        DOMConfigurator.configure("./config/log4j2.xml");
-
         Configuration configuration = null;
         try
         {

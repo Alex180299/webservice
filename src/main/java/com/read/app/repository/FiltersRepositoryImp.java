@@ -4,7 +4,8 @@ import com.read.app.model.Filter;
 import com.read.app.model.Layout;
 import com.read.app.model.LayoutLists;
 import com.read.app.service.LayoutsService;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class FiltersRepositoryImp implements FiltersRepository
     private static Logger log;
 
     public FiltersRepositoryImp(){
-        log = Logger.getLogger(FiltersRepositoryImp.class);
+        log = LogManager.getLogger(FiltersRepositoryImp.class);
     }
 
     @Override

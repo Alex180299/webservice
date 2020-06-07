@@ -7,13 +7,15 @@ import com.read.app.configuration.ConfigurationModule;
 import com.read.app.model.Configuration;
 import com.read.app.model.Filters;
 import com.read.app.model.Layout;
-import org.apache.log4j.Logger;
+import com.read.app.repository.FiltersRepositoryImp;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 
 public class ReadLayouts {
 
-    private static final Logger log = Logger.getLogger(App.class);
+    private static final Logger log = LogManager.getLogger(FiltersRepositoryImp.class);
     private static final XmlMapper xmlMapper = new XmlMapper();
     static {
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);

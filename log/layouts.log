@@ -92,3 +92,20 @@
 2020-06-05 11:49:03 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
 2020-06-05 11:49:03 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
 2020-06-05 11:49:03 INFO  ReadLayoutSchedule:32 - Tarea programada de lectura de layouts iniciada
+13:43:09.642 [main] INFO  App - Configuracion cargada
+13:43:09.704 [main] ERROR App - Error al extraer la configuración: null
+13:44:19.818 [main] INFO  App - Configuracion cargada
+13:44:19.821 [main] ERROR App - Error al extraer la configuración: null
+13:45:54.808 [main] INFO  App - Configuracion cargada
+13:45:54.820 [main] ERROR App - Error al extraer la configuración: null
+13:46:18.347 [main] INFO  App - Configuracion cargada
+13:46:18.350 [main] ERROR App - Error al extraer la configuración: null
+13:46:57.272 [main] INFO  App - Configuracion cargada
+13:46:57.293 [main] ERROR App - Error al extraer la configuración: null
+14:00:47.643 [main] INFO  App - Configuracion cargada
+14:01:27.289 [main] INFO  App - Configuracion cargada
+14:02:41.233 [main] INFO  App - Configuracion cargada
+14:27:47.456 [main] INFO  App - Configuracion cargada
+14:27:47.603 [main] INFO  com.read.app.repository.FiltersRepositoryImp - Tarea programada de lectura de layouts iniciada
+14:42:59.427 [main] INFO  App - Configuracion cargada
+14:42:59.565 [main] INFO  com.read.app.repository.FiltersRepositoryImp - Tarea programada de lectura de layouts iniciada
