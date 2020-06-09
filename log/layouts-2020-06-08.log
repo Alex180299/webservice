@@ -1,0 +1,111 @@
+2020-06-04 17:02:25 INFO  App:36 - This is Logger Info
+2020-06-04 17:02:26 INFO  App:82 - Configuracion cargada
+2020-06-04 17:02:26 INFO  ReadLayoutSchedule:31 - Tarea programada de lectura de layouts iniciada
+2020-06-04 17:09:13 INFO  App:36 - This is Logger Info
+2020-06-04 17:09:13 INFO  App:82 - Configuracion cargada
+2020-06-04 17:09:14 INFO  StdSchedulerFactory:1220 - Using default implementation for ThreadExecutor
+2020-06-04 17:09:14 INFO  SimpleThreadPool:268 - Job execution threads will use class loader of thread: main
+2020-06-04 17:09:14 INFO  SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-04 17:09:14 INFO  QuartzScheduler:229 - Quartz Scheduler v.2.3.2 created.
+2020-06-04 17:09:14 INFO  RAMJobStore:155 - RAMJobStore initialized.
+2020-06-04 17:09:14 INFO  QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-06-04 17:09:14 INFO  StdSchedulerFactory:1374 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-04 17:09:14 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
+2020-06-04 17:09:14 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-06-04 17:09:14 INFO  ReadLayoutSchedule:31 - Tarea programada de lectura de layouts iniciada
+2020-06-04 17:09:14 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:09:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:09:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:09:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:09:40 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:10:04 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:10:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:10:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:10:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:10:40 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:11:08 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:11:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:11:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:11:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:11:38 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:12:02 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:12:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:12:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:12:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:12:41 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:13:07 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:13:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:13:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:13:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:13:39 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:14:05 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:14:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:14:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:14:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:14:44 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:15:08 DEBUG QuartzSchedulerThread:291 - batch acquisition of 1 triggers
+2020-06-04 17:15:15 DEBUG PropertySettingJobFactory:51 - Producing instance of Job 'DEFAULT.readXmlProcess', class=com.read.app.schedule.ReadLayoutSchedule
+2020-06-04 17:15:15 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:15:15 DEBUG JobRunShell:201 - Calling execute on job DEFAULT.readXmlProcess
+2020-06-04 17:15:41 DEBUG QuartzSchedulerThread:291 - batch acquisition of 0 triggers
+2020-06-04 17:15:57 INFO  App:36 - This is Logger Info
+2020-06-04 17:15:57 INFO  App:82 - Configuracion cargada
+2020-06-04 17:15:58 INFO  StdSchedulerFactory:1220 - Using default implementation for ThreadExecutor
+2020-06-04 17:15:58 INFO  SimpleThreadPool:268 - Job execution threads will use class loader of thread: main
+2020-06-04 17:15:58 INFO  SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-04 17:15:58 INFO  QuartzScheduler:229 - Quartz Scheduler v.2.3.2 created.
+2020-06-04 17:15:58 INFO  RAMJobStore:155 - RAMJobStore initialized.
+2020-06-04 17:15:58 INFO  QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-06-04 17:15:58 INFO  StdSchedulerFactory:1374 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-04 17:15:58 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
+2020-06-04 17:15:58 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-06-04 17:15:58 INFO  ReadLayoutSchedule:31 - Tarea programada de lectura de layouts iniciada
+2020-06-05 11:49:03 INFO  App:29 - Configuracion cargada
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1220 - Using default implementation for ThreadExecutor
+2020-06-05 11:49:03 INFO  SimpleThreadPool:268 - Job execution threads will use class loader of thread: main
+2020-06-05 11:49:03 INFO  SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-05 11:49:03 INFO  QuartzScheduler:229 - Quartz Scheduler v.2.3.2 created.
+2020-06-05 11:49:03 INFO  RAMJobStore:155 - RAMJobStore initialized.
+2020-06-05 11:49:03 INFO  QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1374 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-05 11:49:03 INFO  StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
+2020-06-05 11:49:03 INFO  QuartzScheduler:547 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-06-05 11:49:03 INFO  ReadLayoutSchedule:32 - Tarea programada de lectura de layouts iniciada
+13:43:09.642 [main] INFO  App - Configuracion cargada
+13:43:09.704 [main] ERROR App - Error al extraer la configuración: null
+13:44:19.818 [main] INFO  App - Configuracion cargada
+13:44:19.821 [main] ERROR App - Error al extraer la configuración: null
+13:45:54.808 [main] INFO  App - Configuracion cargada
+13:45:54.820 [main] ERROR App - Error al extraer la configuración: null
+13:46:18.347 [main] INFO  App - Configuracion cargada
+13:46:18.350 [main] ERROR App - Error al extraer la configuración: null
+13:46:57.272 [main] INFO  App - Configuracion cargada
+13:46:57.293 [main] ERROR App - Error al extraer la configuración: null
+14:00:47.643 [main] INFO  App - Configuracion cargada
+14:01:27.289 [main] INFO  App - Configuracion cargada
+14:02:41.233 [main] INFO  App - Configuracion cargada
+14:27:47.456 [main] INFO  App - Configuracion cargada
+14:27:47.603 [main] INFO  com.read.app.repository.FiltersRepositoryImp - Tarea programada de lectura de layouts iniciada
+14:42:59.427 [main] INFO  App - Configuracion cargada
+14:42:59.565 [main] INFO  com.read.app.repository.FiltersRepositoryImp - Tarea programada de lectura de layouts iniciada
