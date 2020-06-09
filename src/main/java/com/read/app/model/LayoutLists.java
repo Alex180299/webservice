@@ -4,28 +4,33 @@ import java.util.List;
 
 public class LayoutLists
 {
-    private static Layout layout;
-    private static Filters filters;
+    private static final Layout layout = new Layout();
+    private static final Filters filters = new Filters();
 
-    public static void setLayout(Layout layout)
+    public static synchronized void setLayout(Layout layout)
     {
-        LayoutLists.layout = layout;
+        LayoutLists.layout.getLayoutIn().getFields().getField().clear();
+        LayoutLists.layout.getLayoutIn().getFields().getField().addAll(layout.getLayoutIn().getFields().getField());
+
+        LayoutLists.layout.getLayoutOut().getFields().getField().clear();
+        LayoutLists.layout.getLayoutOut().getFields().getField().addAll(layout.getLayoutOut().getFields().getField());
         sortLayout();
     }
 
-    public static void setFilters(Filters filters)
+    public static synchronized void setFilters(Filters filters)
     {
-        LayoutLists.filters = filters;
+        LayoutLists.filters.getFilter().clear();
+        LayoutLists.filters.getFilter().addAll(filters.getFilter());
         sortFilters();
     }
 
-    public static Layout getLayout()
+    public static synchronized Layout getLayout()
     {
         sortLayout();
         return layout;
     }
 
-    public static Filters getFiltersLayout()
+    public static synchronized Filters getFiltersLayout()
     {
         sortFilters();
         return filters;
@@ -44,16 +49,19 @@ public class LayoutLists
 
     public static List<Field> getLayoutIn()
     {
+        sortLayout();
         return layout.getLayoutIn().getFields().getField();
     }
 
     public static List<Field> getLayoutOut()
     {
+        sortLayout();
         return layout.getLayoutOut().getFields().getField();
     }
 
     public static List<Filter> getFilters()
     {
+        sortFilters();
         return filters.getFilter();
     }
 
