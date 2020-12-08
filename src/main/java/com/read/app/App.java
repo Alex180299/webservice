@@ -29,7 +29,7 @@ public class App
 
     public static void init()
     {
-        Configuration configuration = null;
+        Configuration configuration;
         try
         {
             try
