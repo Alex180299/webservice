@@ -29,7 +29,7 @@ public class App
 
     public static void init()
     {
-        Configuration configuration = null;
+        Configuration configuration;
         try
         {
             try
@@ -42,6 +42,7 @@ public class App
                 log.fatal("No se puede configurar el archivo logger debiado a : " + e.getMessage() + " la aplicacion se cerrara ");
                 System.exit(-1);
             }
+            
             log.info("Se ha cargado el logger correctamente");
 
             configuration = readLayouts.readConfig();
